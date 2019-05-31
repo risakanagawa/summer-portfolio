@@ -38,17 +38,15 @@ export class App extends Component {
 
     return (
       <div>
-          <TransitionGroup>
-            <CSSTransition key={currentkey} classNames="fade" timeout={timeout}>
-              <Switch location={location}>
-                <Route exact path="/" component={HomePage} />
-                <Route path="/about" component={About} />
-                <Route path="/work" component={Works} />
-
-              </Switch>
-            </CSSTransition>
-          </TransitionGroup>
-          {/* <Route path="/:name" exact component={Work} /> */}
+        <TransitionGroup>
+          <CSSTransition key={currentkey} classNames="fade" timeout={timeout}>
+            <Switch location={location}>
+              <Route exact path="/" component={HomePage} />
+              <Route path="/about" component={About} />
+              <Route path="/:name" exact component={Work} />
+            </Switch>
+          </CSSTransition>
+        </TransitionGroup>
 
         <Sidebar />
       </div>

@@ -2,6 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import { selectedProject } from "../../store/action";
 import { withRouter, Link } from "react-router-dom";
+import Activebar from "../layout/Activebar";
 
 class Works extends React.Component {
   onSelectedProject = project => {
@@ -28,15 +29,17 @@ class Works extends React.Component {
 
   render() {
     return (
+      <div>
       <div id="portfolio" className="portfolio">
         <h1>Portfolio</h1>
         <div className="project-wrapper">{this.renderList()}</div>
+      </div>
+      <Activebar />
       </div>
     );
   }
 }
 const mapStateToProps = state => {
-  console.log(state);
   return { projects: state.projects.projects };
 };
 

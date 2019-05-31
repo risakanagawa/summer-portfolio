@@ -8,11 +8,11 @@ import Sidebar from "../layout/Sidebar";
 
 const HomePage = () => {
   return (
-    <div>
+    <div id='top'>
       <Navbar />
       <Home />
-      {/* <Works /> */}
-      {/* <Footer /> */}
+      <Works />
+      <Footer />
     </div>
   );
 };

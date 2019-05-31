@@ -1,10 +1,11 @@
 import React from "react";
+import AnchorLink from "react-anchor-link-smooth-scroll";
 
 import Github from "../../../public/img/icons/github.svg";
 import LinkedIn from "../../../public/img/icons/linkedin.svg";
 import Insta from "../../../public/img/icons/instagram.svg";
-// import FooterSvg from '../../../public/img/icons/footer.svg'
 import FooterSvg from "./FooterSvg";
+const email = require("../../../public/img/icons/email.svg");
 
 class Footer extends React.Component {
   constructor(props) {
@@ -26,18 +27,33 @@ class Footer extends React.Component {
   handleScroll = e => {
     const that = window;
     const FooterOffset = that.footer.getBoundingClientRect().top;
-    if (FooterOffset <= 430) {
-      this.setState({
-        scrollToFooter: true
-      });
+    const windowWidth = that.innerWidth;
+    if (windowWidth <= 1024) {
+      if (FooterOffset <= 1000) {
+        this.setState({
+          scrollToFooter: true
+        });
+      } else {
+        this.setState({
+          scrollToFooter: false
+        });
+      }
     } else {
-      this.setState({
-        scrollToFooter: false
-      });
+      if (FooterOffset <= 570) {
+        this.setState({
+          scrollToFooter: true
+        });
+      } else {
+        this.setState({
+          scrollToFooter: false
+        });
+      }
     }
+
   };
 
   render() {
+
     return (
       <div
         id="footer"
@@ -49,7 +65,11 @@ class Footer extends React.Component {
           <h2 className={this.state.scrollToFooter ? "footer-title" : null}>
             <FooterSvg />
           </h2>
-          <h3>kanagawa.risa@gmail.com</h3>
+          <h3>
+          <a href="mailto:kanagawa.risa@gmail.com?Subject=Hello" target="_top">kanagawa.risa@gmail.com</a>
+            </h3>
+            <AnchorLink href='#top'  className='top-btn' ><span>↑ TOP</span></AnchorLink>
+
         </div>
       </div>
     );

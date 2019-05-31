@@ -1,6 +1,5 @@
 import React from "react";
 import TypeIt from "typeit";
-import AnchorLink from "react-anchor-link-smooth-scroll";
 
 class Home extends React.Component {
   componentDidMount() {
