@@ -7,6 +7,8 @@ import Insta from "../../../public/img/icons/instagram.svg";
 import FooterSvg from "./FooterSvg";
 const email = require("../../../public/img/icons/email.svg");
 
+import "./Footer.scss"
+
 class Footer extends React.Component {
   constructor(props) {
     super(props);

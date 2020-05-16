@@ -18,7 +18,7 @@ class Home extends React.Component {
       <div className='home'>
         <div className="title">
           <span id="ele" />
-          <p>Front-End Engineer currently based in beautiful Vancouver, Canada.</p>
+          <p>Front-End Engineer currently based in beautiful Fukuoka, Japan.</p>
         </div>
         <div className="home-wrapper">
           < span />

@@ -2,50 +2,52 @@ import React from "react";
 import { connect } from "react-redux";
 import { selectedProject } from "../../store/action";
 import { withRouter, Link } from "react-router-dom";
-import Activebar from "../layout/Activebar";
 
-class Works extends React.Component {
-  onSelectedProject = project => {
-    this.props.selectedProject(project);
+import "./Works.scss";
+
+const Works = ({ projects, selectedProject }) => {
+  console.log(selectedProject);
+
+  const onSelectedProject = (project) => {
+    selectedProject(project);
   };
 
-  renderList() {
-    return this.props.projects.map((project, idx) => {
+  const renderList = () => {
+    return projects.map((project, idx) => {
       return (
-        <div key={idx} className="project-box">
-          <div className="project-img">
-            <img src={project.img} alt={project.name} />
-          </div>
-          <div className="project-detail">
-          <h3>{project.name}</h3>
-            <button onClick={() => this.onSelectedProject(project)}>
+        <div key={idx} className="project__box">
+          <div
+            className="project__box--img"
+            style={{
+              background: `url(${project.img}) no-repeat center`,
+              backgroundSize: "contain",
+            }}
+            alt={project.name}
+          ></div>
+          <div className="project__box--detail">
+            <h3>{project.name}</h3>
+            <button onClick={() => onSelectedProject(project)}>
               <Link to={project.id}>DETAIL</Link>
             </button>
           </div>
         </div>
       );
     });
-  }
+  };
 
-  render() {
-    return (
-      <div>
+  return (
+    <div>
       <div id="portfolio" className="portfolio">
-        <h1>Portfolio</h1>
-        <div className="project-wrapper">{this.renderList()}</div>
+        <div className="portfolio__stickey">
+          <h1>Portfolio</h1>
+        </div>
+        <div className="project-wrapper">{renderList()}</div>
       </div>
-      <Activebar />
-      </div>
-    );
-  }
-}
-const mapStateToProps = state => {
+    </div>
+  );
+};
+const mapStateToProps = (state) => {
   return { projects: state.projects.projects };
 };
 
-export default withRouter(
-  connect(
-    mapStateToProps,
-    { selectedProject }
-  )(Works)
-);
+export default withRouter(connect(mapStateToProps, { selectedProject })(Works));

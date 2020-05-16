@@ -10,6 +10,7 @@ import About from "./components/pages/About";
 import Sidebar from "./components/layout/Sidebar";
 import Navbar from "./components/layout/Navbar";
 import Works from "./components/pages/Works";
+import LangBar from "./components/layout/LangBar";
 
 export class App extends Component {
   constructor(props) {
@@ -47,7 +48,7 @@ export class App extends Component {
             </Switch>
           </CSSTransition>
         </TransitionGroup>
-
+        <LangBar />
         <Sidebar />
       </div>
     );

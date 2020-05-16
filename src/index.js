@@ -6,6 +6,7 @@ import { BrowserRouter } from "react-router-dom";
 
 import reducers from "./store/reducer";
 import App from "./App";
+import './i18n';
 import "../public/favicon.ico";
 
 const store = createStore(reducers);
