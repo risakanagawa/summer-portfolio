@@ -48,7 +48,7 @@ const initialState = {
       type: "development",
       img: meetup,
       mockup: meetupDesktop,
-      technology: ["HTML", "CSS",,"React", "Redux", "Google Map", "React-Router"],
+      technology: ["HTML", "CSS","React", "Redux", "Google-Map", "React-Router"],
       url: "https://github.com/risakanagawa/search-events",
       description: 'Meetup Searcher in Vancouver. Built with HTML, Sass, JavaScript (React, Redux). You can search upcoming meetup here in vancouver by various categories. It will show location of these meetups by Google Maps, Meetup API'
     },

@@ -1,19 +1,30 @@
 import React from "react";
 import { connect } from "react-redux";
-import { selectedProject } from "../../store/action";
+import { selectedProject } from "../../../store/action";
 import { withRouter, Link } from "react-router-dom";
 
 import "./Works.scss";
 
-const Works = ({ projects, selectedProject }) => {
-  console.log(selectedProject);
-
+const Works = ({ projects, selectedProject, icons }) => {
   const onSelectedProject = (project) => {
     selectedProject(project);
   };
 
   const renderList = () => {
     return projects.map((project, idx) => {
+      const techs = project.technology.map((tech) => {
+        return tech.toLowerCase();
+      });
+
+      let iconList = [];
+
+      techs.forEach((tech) => {
+        icons.forEach((icon) => {
+          if (tech === icon.name) {
+            iconList.push(icon.svg);
+          }
+        });
+      });
       return (
         <div key={idx} className="project__box">
           <div
@@ -26,6 +37,11 @@ const Works = ({ projects, selectedProject }) => {
           ></div>
           <div className="project__box--detail">
             <h3>{project.name}</h3>
+            <ul>
+              {iconList.map((icon, idx) => (
+                <li key={idx}>{icon}</li>
+              ))}
+            </ul>
             <button onClick={() => onSelectedProject(project)}>
               <Link to={project.id}>DETAIL</Link>
             </button>
@@ -36,18 +52,13 @@ const Works = ({ projects, selectedProject }) => {
   };
 
   return (
-    <div>
-      <div id="portfolio" className="portfolio">
-        <div className="portfolio__stickey">
-          <h1>Portfolio</h1>
-        </div>
-        <div className="project-wrapper">{renderList()}</div>
+      <div className="portfolio__works">
+        <div className="project__wrapper">{renderList()}</div>
       </div>
-    </div>
   );
 };
 const mapStateToProps = (state) => {
-  return { projects: state.projects.projects };
+  return { projects: state.projects.projects, icons: state.devIcons };
 };
 
 export default withRouter(connect(mapStateToProps, { selectedProject })(Works));

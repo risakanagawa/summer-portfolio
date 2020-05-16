@@ -14,7 +14,7 @@ import Nintendogamecube from "../../../public/img/icons/nintendogamecube.svg";
 const initialState = [
   {
     svg: <Html5 />,
-    name: "html5",
+    name: "html",
   },
   {
     svg: <Sass />,
@@ -22,7 +22,7 @@ const initialState = [
   },
   {
     svg: <Css3 />,
-    name: "css3",
+    name: "css",
   },
   {
     svg: <Javascript />,

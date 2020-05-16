@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { connect } from "react-redux";
 import { useTranslation } from "react-i18next";
-import resume from "../../../public/document/resume.pdf";
-import Me from "../../../public/img/me.jpg";
-import Footer from "./Footer";
-import Backbar from "../layout/Backbar";
+import resume from "../../../../public/document/resume.pdf";
+import Me from "../../../../public/img/me.jpg";
+import Footer from "../Footer/Footer";
+import Backbar from "../../layout/Backbar";
 
 import "./About.scss";
 

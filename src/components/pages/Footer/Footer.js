@@ -1,11 +1,11 @@
 import React from "react";
 import AnchorLink from "react-anchor-link-smooth-scroll";
 
-import Github from "../../../public/img/icons/github.svg";
-import LinkedIn from "../../../public/img/icons/linkedin.svg";
-import Insta from "../../../public/img/icons/instagram.svg";
+import Github from "../../../../public/img/icons/github.svg";
+import LinkedIn from "../../../../public/img/icons/linkedin.svg";
+import Insta from "../../../../public/img/icons/instagram.svg";
 import FooterSvg from "./FooterSvg";
-const email = require("../../../public/img/icons/email.svg");
+const email = require("../../../../public/img/icons/email.svg");
 
 import "./Footer.scss"
 
