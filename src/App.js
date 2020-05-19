@@ -9,7 +9,6 @@ import HomePage from "./components/pages/HomePage";
 import Work from "./components/pages/Work";
 import About from "./components/pages/About/About";
 import Sidebar from "./components/layout/Sidebar";
-import LangBar from "./components/layout/LangBar";
 
 export class App extends Component {
   constructor(props) {
@@ -50,7 +49,6 @@ export class App extends Component {
             </Switch>
           </CSSTransition>
         </TransitionGroup>
-        <LangBar />
         <Sidebar />
         </ ScrollToTop>
 

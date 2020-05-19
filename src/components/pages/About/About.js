@@ -5,6 +5,8 @@ import resume from "../../../../public/document/resume.pdf";
 import Me from "../../../../public/img/me.jpg";
 import Footer from "../Footer/Footer";
 import Backbar from "../../layout/Backbar";
+import LangBar from "../../layout/LangBar";
+
 
 import "./About.scss";
 
@@ -34,6 +36,7 @@ const About = ({ icons }) => {
           </a>
         </div>
       </div>
+      <LangBar />
       <Backbar />
       <Footer />
     </div>
