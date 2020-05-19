@@ -30,7 +30,7 @@ const About = ({ icons }) => {
             </ul>
           </div>
           <a href={resume}>
-            <button className="resume-btn resume-hover">{t("resume")}</button>
+            <button className="btn btn-hover">{t("resume")}</button>
           </a>
         </div>
       </div>

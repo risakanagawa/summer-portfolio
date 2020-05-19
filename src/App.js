@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { BrowserRouter, Route, Switch, withRouter } from "react-router-dom";
 import { CSSTransition, TransitionGroup } from "react-transition-group";
+import ScrollToTop from "./ScrollToTop";
 
 import "./App.scss";
 
@@ -37,7 +38,10 @@ export class App extends Component {
 
     return (
       <div>
+                <ScrollToTop>
+
         <TransitionGroup>
+
           <CSSTransition key={currentkey} classNames="fade" timeout={timeout}>
             <Switch location={location}>
               <Route exact path="/" component={HomePage} />
@@ -48,6 +52,8 @@ export class App extends Component {
         </TransitionGroup>
         <LangBar />
         <Sidebar />
+        </ ScrollToTop>
+
       </div>
     );
   }

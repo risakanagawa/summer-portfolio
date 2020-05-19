@@ -106,45 +106,7 @@
       }
     }
 
-    .resume-btn {
-      background: none;
-      border: 2px solid #fedf06;
-      padding: 15px 25px;
-      min-width: 200px;
-      margin: 10px;
-      cursor: pointer;
-      position: relative;
-      color: #fedf06;
-
-      &::before {
-        content: "";
-        position: absolute;
-        left: 0;
-        top: 0;
-        width: 100%;
-        height: 100%;
-        background: #fedf06;
-        z-index: -1;
-        transition: transform 0.2s;
-        transition-timing-function: cubic-bezier(0.5, 1.5, 0.4, 0.7);
-      }
-    }
-
-    .resume-hover {
-      z-index: 10;
-
-      &:hover {
-        color: #ffffff;
-      }
-
-      &::before {
-        transform: scaleX(0);
-      }
-
-      &:hover::before {
-        transform: scaleX(1);
-      }
-    }
+    
   }
 }
 

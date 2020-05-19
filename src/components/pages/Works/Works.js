@@ -5,13 +5,20 @@ import { withRouter, Link } from "react-router-dom";
 
 import "./Works.scss";
 
-const Works = ({ projects, selectedProject, icons }) => {
+const Works = ({ projects, selectedProject, icons, category }) => {
+  console.log("works", category);
   const onSelectedProject = (project) => {
     selectedProject(project);
   };
 
+  const categorizedList = projects.filter((project) => {
+    return project.type === category;
+  });
+  console.log(categorizedList);
+
   const renderList = () => {
-    return projects.map((project, idx) => {
+    const results = category === "all" ? projects : categorizedList;
+    return results.map((project, idx) => {
       const techs = project.technology.map((tech) => {
         return tech.toLowerCase();
       });
@@ -24,7 +31,9 @@ const Works = ({ projects, selectedProject, icons }) => {
             iconList.push(icon.svg);
           }
         });
+        
       });
+
       return (
         <div key={idx} className="project__box">
           <div
@@ -42,9 +51,14 @@ const Works = ({ projects, selectedProject, icons }) => {
                 <li key={idx}>{icon}</li>
               ))}
             </ul>
-            <button onClick={() => onSelectedProject(project)}>
-              <Link to={project.id}>DETAIL</Link>
-            </button>
+            <Link to={project.id}>
+              <button
+                className="btn btn-hover"
+                onClick={() => onSelectedProject(project)}
+              >
+                DETAIL
+              </button>
+            </Link>
           </div>
         </div>
       );
@@ -52,9 +66,9 @@ const Works = ({ projects, selectedProject, icons }) => {
   };
 
   return (
-      <div className="portfolio__works">
-        <div className="project__wrapper">{renderList()}</div>
-      </div>
+    <div className="portfolio__works">
+      <div className="project__wrapper">{renderList()}</div>
+    </div>
   );
 };
 const mapStateToProps = (state) => {

@@ -40,7 +40,7 @@ const initialState = {
       mockup: recreativeapparelDesktop,
       technology: ["HTML", "CSS", "WordPress", "PHP", "jQuery"],
       url: null,
-      description: 'Ecommerce web site for apparel service. Worked with wonderful web developers, UI/UX designers and marketers. This website is made with HTML, SASS, JQuery, WordPress and PHP in back-end.'
+      description: 'E-commerce web site for apparel service. Worked with wonderful web developers, UI/UX designers and marketers for our client. This website is made with HTML, SASS, JQuery, WordPress and PHP in back-end.'
     },
     {
       id: "Vancouver-meetup-seacher",

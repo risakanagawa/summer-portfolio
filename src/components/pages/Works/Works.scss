@@ -33,7 +33,32 @@
   }
 
   &__nav {
-    // width: 30%;
+    li {
+      border-radius: 5px;
+      margin-right: 5px;
+      padding: 5px 10px;
+      position: relative;
+      box-sizing: border-box;
+      &:after {
+        position: absolute;
+        left: 0;
+        top: 50%;
+        bottom: 50%;
+        transform: translate(0, -50%);
+        display: block;
+        content: "";
+        width: 0%;
+        height: 2px;
+        background: #fedf06;
+        transition: all 0.2s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+      }
+    }
+    .li,
+    .active {
+      &:after {
+        width: 100%;
+      }
+    }
   }
   &__works {
     display: flex;
@@ -51,6 +76,7 @@
       }
 
       &__box {
+        box-sizing: border-box;
         margin-top: 50px;
         scroll-snap-align: center;
         display: flex;
@@ -59,7 +85,7 @@
         width: 47%;
         &--img {
           z-index: 10;
-          width: 400px;
+          width: 600px;
           height: 300px;
         }
 
@@ -82,11 +108,6 @@
             color: #fedf06;
           }
 
-          button {
-            padding: 10px 20px;
-            background: transparent;
-            border: 2px solid #fedf06;
-          }
         }
 
         @include tablet {
@@ -96,10 +117,6 @@
           width: 100%;
           height: 600px;
           margin-left: 20px;
-
-          &:nth-child(even) {
-            flex-flow: wrap;
-          }
 
           .project-img {
             img {
