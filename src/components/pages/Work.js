@@ -46,7 +46,6 @@ const Work = ({ project }) => {
 };
 
 function mapStateToProps(state) {
-  console.log(state);
   return {
     project: state.selectedProject,
     icons: state.devIcons,

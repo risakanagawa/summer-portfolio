@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { withTranslation } from "react-i18next";
 
 const LangBar = ({ i18n }) => {
-  console.log("lang", i18n.language);
   const [lang, setLang] = useState("ja");
 
   const handleClick = (e) => {

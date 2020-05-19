@@ -5,7 +5,6 @@ import CategoryNav from "./CategoryNav";
 export default function WorksContainer() {
   const [category, setCategory] = useState("all");
   const toggleCategory = (category) => {
-    console.log(category);
     setCategory(category);
   };
   return (

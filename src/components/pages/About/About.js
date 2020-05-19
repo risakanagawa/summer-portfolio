@@ -41,7 +41,6 @@ const About = ({ icons }) => {
 };
 
 const mapStateToProps = (state) => {
-  console.log(state);
   return {
     icons: state.devIcons,
   };

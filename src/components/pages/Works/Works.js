@@ -6,7 +6,6 @@ import { withRouter, Link } from "react-router-dom";
 import "./Works.scss";
 
 const Works = ({ projects, selectedProject, icons, category }) => {
-  console.log("works", category);
   const onSelectedProject = (project) => {
     selectedProject(project);
   };
@@ -14,7 +13,6 @@ const Works = ({ projects, selectedProject, icons, category }) => {
   const categorizedList = projects.filter((project) => {
     return project.type === category;
   });
-  console.log(categorizedList);
 
   const renderList = () => {
     const results = category === "all" ? projects : categorizedList;
