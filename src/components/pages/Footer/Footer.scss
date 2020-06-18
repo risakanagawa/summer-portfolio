@@ -1,0 +1,121 @@
+@import "../../../Common.scss";
+
+// *****************************
+
+// FOOTER PAGE
+
+// ******************************
+
+.footer {
+  height: auto;
+  background: #01b1bf;
+  position: relative;
+  padding-top: 100px;
+
+  svg {
+    width: 400px;
+    height: 200px;
+  }
+
+  .contact-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    h3 {
+      a {
+        color: #ffffff;
+        margin: 10px 0;
+        font-size: 2rem;
+        font-weight: 100;
+        cursor: url("../../../../public/img/icons/email.png"), auto;
+      }
+    }
+
+    .top-btn {
+      margin: 10px 0;
+      font-weight: bold;
+      font-size: 2rem;
+      height: 50px;
+    }
+  }
+
+  .footer-title {
+    svg {
+      stroke: #fedf06;
+    }
+
+    path:nth-child(1) {
+      stroke-dasharray: 245px;
+      stroke-dashoffset: 245px;
+      fill: #fedf06;
+      animation: anime-text 2s ease forwards;
+    }
+
+    path:nth-child(2) {
+      stroke-dasharray: 242px;
+      stroke-dashoffset: 242px;
+      animation: anime-text 3.2s ease forwards;
+    }
+
+    path:nth-child(3) {
+      stroke-dasharray: 217px;
+      stroke-dashoffset: 217px;
+      animation: anime-text 3s ease forwards;
+      fill: blue;
+    }
+
+    path:nth-child(4) {
+      stroke-dasharray: 267px;
+      stroke-dashoffset: 267px;
+      animation: anime-text 2s ease forwards;
+    }
+
+    path:nth-child(5) {
+      stroke-dasharray: 129px;
+      stroke-dashoffset: 129px;
+      animation: anime-text 3s ease forwards;
+      fill: #ff005d;
+    }
+
+    path:nth-child(6) {
+      stroke-dasharray: 119px;
+      stroke-dashoffset: 119px;
+      animation: anime-text 5s ease forwards;
+    }
+
+    @keyframes anime-text {
+      to {
+        stroke-dashoffset: 0;
+      }
+    }
+  }
+}
+
+@include tablet {
+  .footer {
+    height: auto;
+
+    .contact-section {
+      width: 80vw;
+      margin: 0 auto;
+      padding-left: 30px;
+      svg {
+        width: 300px;
+        height: 100px;
+      }
+
+      h3 {
+        a {
+          font-size: 1.5rem;
+          text-align: center;
+        }
+      }
+      .top-btn {
+        margin: 20px 0;
+        font-size: 1rem;
+      }
+    }
+  }
+}

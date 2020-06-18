@@ -1,0 +1,104 @@
+@import "../../Common.scss";
+
+// *****************************
+
+// NAVIGATION BAR
+
+// ******************************
+
+
+nav {
+    z-index: 999;
+    color: #FEDF06;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+
+    ul {
+        display: block;
+    }
+
+}
+
+.side-bar {
+    h2 {
+        z-index: 99;
+        position: fixed;
+        top: 0;
+        color: #FEDF06;
+        margin-top: 40px;
+        padding: 0 10px;
+    }
+
+    .left-nav {
+        z-index: 999;
+        border-left: #FEDF06 1px solid;
+        color: #FEDF06;
+        margin-bottom: 40px;
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        height: 90vh;
+        -webkit-writing-mode: vertical-rl;
+        -ms-writing-mode: tb-rl;
+        writing-mode: vertical-rl;
+        transform: rotate(180deg);
+    }
+}
+
+.goback-bar {
+    color: #FEDF06;
+    position: fixed;
+    right: 0;
+    z-index: 99;
+    top: 0;
+    margin-top: 40px;
+    padding: 0 10px;
+
+    h2 {
+        &:hover {
+            background-image: url("data:image/svg+xml;charset=utf8,%3Csvg id='squiggle-link' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:ev='http://www.w3.org/2001/xml-events' viewBox='0 0 20 4'%3E%3Cstyle type='text/css'%3E.squiggle{animation:shift .3s linear infinite;}@keyframes shift {from {transform:translateX(0);}to {transform:translateX(-20px);}}%3C/style%3E%3Cpath fill='none' stroke='%23453886' stroke-width='2' class='squiggle' d='M0,3.5 c 5,0,5,-3,10,-3 s 5,3,10,3 c 5,0,5,-3,10,-3 s 5,3,10,3'/%3E%3C/svg%3E");
+            background-position: bottom;
+            background-repeat: repeat-x;
+            background-size: 20%;
+            border-bottom: 0;
+            padding-bottom: .3em;
+            text-decoration: none;
+        }
+    }
+}
+
+
+
+//
+.langchange__bar {
+    position: fixed;
+    z-index: 999;
+    right: 10px;
+    top: 10px;
+    display: flex;
+    align-items: center;
+    color: $accent-color;
+    font-size: 1.4rem;
+    h2 {
+        padding: 5px;
+        font-weight: normal;
+        position: relative;
+        &:after {
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            display: block;
+            content: "";
+            width: 0%;
+            height: 1px;
+            background: #fedf06;
+            transition: all 0.2s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+          }
+    }
+    .active {
+      &:after {
+        width: 100%;
+      }
+    }
+}
